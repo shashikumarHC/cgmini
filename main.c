@@ -916,6 +916,7 @@ void display()
     char d[]="SHASHIKUMAR H C";
     char e[]="4GH19CS045";
     char f[]="BY :-";
+    char g[]=": TO EXIT PRESS 'E' :";
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1.0,1.0,1.0);
     for(int i=0;a[i]!='\0';i++)
@@ -990,6 +991,18 @@ void display()
         }
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,f[i]);
     }
+    for(int i=0;g[i]!='\0';i++)
+    {
+        if (g[i]=="W" || "M")
+        {
+            glRasterPos2i(650+(i*25),300);
+        }
+        else
+        {
+            glRasterPos2i(650+(i*20),300);
+        }
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,g[i]);
+    }
     glFlush();
 }
 
@@ -1001,6 +1014,7 @@ int main(int argc, char **argv)
     glutInitWindowPosition(0, 0);
     glutCreateWindow("Small scale solar power plant");
     myInit();
+    glutFullScreen();
     glutDisplayFunc(display);
     void key(unsigned char key,int x,int y){
         switch (key)
